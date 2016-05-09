@@ -12,5 +12,6 @@ RUN cd /tmk_core \
 	&& git checkout 221663cab0623ffffbdd761ba6bdd978f9d2bf45
 # Add our code
 ADD src /src
-# Build it
-RUN cd /src && make
+# Default command : build it
+WORKDIR /src
+CMD make

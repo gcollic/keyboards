@@ -1,4 +1,4 @@
-docker build -t temp .
-$id=(docker create temp)
-docker cp "$($id):/src/keyboard_firmware.hex" .
-docker rm -v $id
+docker build -t gcollic/grimoire60 .
+docker run --name tempcontainer gcollic/grimoire60
+docker cp "tempcontainer:/src/keyboard_firmware.hex" .
+docker rm tempcontainer
