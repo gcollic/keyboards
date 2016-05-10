@@ -82,17 +82,61 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      *  |¬   |Mous|AltF|Alt |Spc| Fn| |FnL|Ent|AltG| Ins|Menu|ctrl|
      *  '---------------------------' '---------------------------'
      */
-
     KEYMAP(
          ESC, 1,   2,   3,   4,   5, GRV,      EQL,  6,   7,   8,   9,   0,MINS, \
-         TAB, Q,   W,   E,   R,   T,RBRC,     BSLS,  Y,   U,   I,   O,   P,LBRC, \
+         TAB, Q,   W,   E,   R,   T,BSLS,     RBRC,  Y,   U,   I,   O,   P,LBRC, \
         LCTL, A,   S,   D,   F,   G, DEL,     BSPC,  H,   J,   K,   L,SCLN,QUOT, \
         LSFT, Z,   X,   C,   V,   B,LGUI,        G,  N,   M,COMM, DOT,SLSH,RSFT, \
-         NUHS,  G,    G, LALT,  SPC,   G,        G,ENT, RALT,  INS, RGUI, RCTL   ),
+         NUBS,FN2,  FN3, LALT,  SPC, FN0,      FN1,ENT, RALT,  INS,  APP, RCTL   ),
+ 
+    /* Keymap 1: Main function layer
+     *  .---------------------------. .---------------------------.
+     *  |  ~| F1| F2| F3| F4| F5| F6| | F7| F8| F9|F10|F11|F12|PrS|
+     *  |---------------------------| |---------------------------|
+     *  |   |   |  7|  8|  9|   |   | |VoU|Nxt|Hom| Up|End|PgU|SLc|
+     *  |---------------------------| |---------------------------|
+     *  |   |   |  4|  5|  6|   |   | |VoD|Pau|Lft|Dwn|Rgt|PgD|Pau|
+     *  |---------------------------| |---------------------------|
+     *  |   |  0|  1|  2|  3|   |   | |Mut|Prv|   |   |   |   |   |
+     *  |---------------------------| |---------------------------|
+     *  |    |    |    |    |   | Fn| |FnL|   |    |    |    |    |
+     *  '---------------------------' '---------------------------'
+     */
+    KEYMAP(
+        TRNS,         F1,  F2,  F3,  F4,      F5,  F6,    F7,  F8,  F9, F10, F11, F12,PSCR, \
+        TRNS,   KP_SLASH,KP_7,KP_8,KP_9,KP_MINUS,TRNS,  VOLU,MNXT,HOME,  UP, END,PGUP,SLCK, \
+        TRNS,KP_ASTERISK,KP_4,KP_5,KP_6, KP_PLUS,TRNS,  VOLD,MPLY,LEFT,DOWN,RGHT,PGDN, BRK, \
+        TRNS,       KP_0,KP_1,KP_2,KP_3,  KP_DOT,TRNS,  MUTE,MPRV,TRNS,TRNS,TRNS,TRNS,TRNS, \
+         TRNS,        TRNS, TRNS, TRNS,     TRNS, FN0,   FN1,TRNS, TRNS, TRNS, TRNS, TRNS   ),
+
+    /* Keymap 2: Mouse layer
+     *  .---------------------------. .---------------------------.
+     *  |   |   |   |   |   |   |   | |   |   |MWL|MWM|MWR|   |   |
+     *  |---------------------------| |---------------------------|
+     *  |   |   |   |   |   |   |   | |   |   |LCl|MUp|RCl|MWU|   |
+     *  |---------------------------| |---------------------------|
+     *  |   |   |   |   |   |   |   | |   |   |MLf|MDw|MRg|MWD|   |
+     *  |---------------------------| |---------------------------|
+     *  |   |   |   |   |   |   |   | |   |   |   |   |   |   |   |
+     *  |---------------------------| |---------------------------|
+     *  |    |    |    |    |   |   | |   |   |    |    |    |    |
+     *  '---------------------------' '---------------------------'
+     */
+    KEYMAP(
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,WH_L,BTN3,WH_R,TRNS,TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,BTN1,MS_U,BTN2,WH_U,TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,MS_L,MS_D,MS_R,WH_D,TRNS, \
+        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
+         TRNS, TRNS, TRNS, TRNS, TRNS,TRNS,  TRNS,TRNS, TRNS, TRNS, TRNS, TRNS   ),
+
 };
 
 /*
  * Fn action definition
  */
 const uint16_t PROGMEM fn_actions[] = {
+    [0] = ACTION_LAYER_MOMENTARY(1),
+    [1] = ACTION_LAYER_TOGGLE(1),
+    [2] = ACTION_LAYER_MOMENTARY(2),
+    [3] = ACTION_LAYER_MODS(1, MOD_LALT)
 };
