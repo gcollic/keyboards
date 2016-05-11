@@ -69,66 +69,27 @@ action_t keymap_fn_to_action(uint8_t keycode)
 }
 
 const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-    /* Keymap 0: Default Layer
-     *  .---------------------------. .---------------------------.
-     *  |Esc|  1|  2|  3|  4|  5|  ~| |  =|  6|  7|  8|  9|  0|  -|
-     *  |---------------------------| |---------------------------|
-     *  |Tab|  Q|  W|  E|  R|  T|  ]| |  \|  Y|  U|  I|  O|  P|  [|
-     *  |---------------------------| |---------------------------|
-     *  |Ctr|  A|  S|  D|  F|  G|Del| |Bsp|  H|  J|  K|  L|  ;|  '|
-     *  |---------------------------| |---------------------------|
-     *  |Shf|  Z|  X|  C|  V|  B| Os| |   |  N|  M|  ,|  .|  /|Shf|
-     *  |---------------------------| |---------------------------|
-     *  |¬   |Mous|AltF|Alt |Spc| Fn| |FnL|Ent|AltG| Ins|Menu|ctrl|
-     *  '---------------------------' '---------------------------'
-     */
+    // Keymap 0: Default Layer
     KEYMAP(
          ESC, 1,   2,   3,   4,   5, GRV,      EQL,  6,   7,   8,   9,   0,MINS, \
-         TAB, Q,   W,   E,   R,   T,BSLS,     RBRC,  Y,   U,   I,   O,   P,LBRC, \
-        LCTL, A,   S,   D,   F,   G, DEL,     BSPC,  H,   J,   K,   L,SCLN,QUOT, \
-        LSFT, Z,   X,   C,   V,   B,LGUI,        G,  N,   M,COMM, DOT,SLSH,RSFT, \
-         NUBS,FN2,  FN3, LALT,  SPC, FN0,      FN1,ENT, RALT,  INS,  APP, RCTL   ),
- 
-    /* Keymap 1: Main function layer
-     *  .---------------------------. .---------------------------.
-     *  |  ~| F1| F2| F3| F4| F5| F6| | F7| F8| F9|F10|F11|F12|PrS|
-     *  |---------------------------| |---------------------------|
-     *  |   |   |  7|  8|  9|   |   | |VoU|Nxt|Hom| Up|End|PgU|SLc|
-     *  |---------------------------| |---------------------------|
-     *  |   |   |  4|  5|  6|   |   | |VoD|Pau|Lft|Dwn|Rgt|PgD|Pau|
-     *  |---------------------------| |---------------------------|
-     *  |   |  0|  1|  2|  3|   |   | |Mut|Prv|   |   |   |   |   |
-     *  |---------------------------| |---------------------------|
-     *  |    |    |    |    |   | Fn| |FnL|   |    |    |    |    |
-     *  '---------------------------' '---------------------------'
-     */
+         TAB, Q,   W,   E,   R,   T, DEL,     BSPC,  Y,   U,   I,   O,   P,LBRC, \
+        LGUI, A,   S,   D,   F,   G,BSLS,     RBRC,  H,   J,   K,   L,SCLN,QUOT, \
+        LSFT, Z,   X,   C,   V,   B,LGUI,     NUBS,  N,   M,COMM, DOT,SLSH,RSFT, \
+         LCTL,FN2,  FN3, LALT,  SPC, ENT,      FN1,FN0, RALT,  INS,  APP, RCTL   ),
+    // Keymap 1: Main function layer
     KEYMAP(
         TRNS,         F1,  F2,  F3,  F4,      F5,  F6,    F7,  F8,  F9, F10, F11, F12,PSCR, \
         TRNS,   KP_SLASH,KP_7,KP_8,KP_9,KP_MINUS,TRNS,  VOLU,MNXT,HOME,  UP, END,PGUP,SLCK, \
         TRNS,KP_ASTERISK,KP_4,KP_5,KP_6, KP_PLUS,TRNS,  VOLD,MPLY,LEFT,DOWN,RGHT,PGDN, BRK, \
         TRNS,       KP_0,KP_1,KP_2,KP_3,  KP_DOT,TRNS,  MUTE,MPRV,TRNS,TRNS,TRNS,TRNS,TRNS, \
          TRNS,        TRNS, TRNS, TRNS,     TRNS, FN0,   FN1,TRNS, TRNS, TRNS, TRNS, TRNS   ),
-
-    /* Keymap 2: Mouse layer
-     *  .---------------------------. .---------------------------.
-     *  |   |   |   |   |   |   |   | |   |   |MWL|MWM|MWR|   |   |
-     *  |---------------------------| |---------------------------|
-     *  |   |   |   |   |   |   |   | |   |   |LCl|MUp|RCl|MWU|   |
-     *  |---------------------------| |---------------------------|
-     *  |   |   |   |   |   |   |   | |   |   |MLf|MDw|MRg|MWD|   |
-     *  |---------------------------| |---------------------------|
-     *  |   |   |   |   |   |   |   | |   |   |   |   |   |   |   |
-     *  |---------------------------| |---------------------------|
-     *  |    |    |    |    |   |   | |   |   |    |    |    |    |
-     *  '---------------------------' '---------------------------'
-     */
+    // Keymap 2: Mouse layer
     KEYMAP(
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,WH_L,BTN3,WH_R,TRNS,TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,BTN1,MS_U,BTN2,WH_U,TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,MS_L,MS_D,MS_R,WH_D,TRNS, \
         TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
          TRNS, TRNS, TRNS, TRNS, TRNS,TRNS,  TRNS,TRNS, TRNS, TRNS, TRNS, TRNS   ),
-
 };
 
 /*
