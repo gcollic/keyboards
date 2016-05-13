@@ -27,10 +27,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #include "debug.h"
 #include "keymap.h"
 
-
 extern const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS];
 extern const uint16_t fn_actions[];
-
 
 #define KEYMAP( \
     K00, K01, K02, K03, K04, K05, K06,         K07, K08, K09, K0A, K0B, K0C, K0D, \
@@ -39,8 +37,8 @@ extern const uint16_t fn_actions[];
     K30, K31, K32, K33, K34, K35, K36,         K37, K38, K39, K3A, K3B, K3C, K3D, \
      K40,  K41,  K43,  K44,  K45, K46,         K47, K48,  K49,  K4A,  K4C,  K4D   \
 ) { \
-/* Left hand                                                                   */ \ 
-/*        A(Red)    B(orange) C(Yellow) D(Green)  E(Blue)   F(Purple) G(Pink)  */ \ 
+/* Left hand                                                                   */ \
+/*        A(Red)    B(orange) C(Yellow) D(Green)  E(Blue)   F(Purple) G(Pink)  */ \
 /* L0 */{ KC_##K00, KC_##K01, KC_##K02, KC_##K03, KC_##K04, KC_##K05, KC_##K06 }, \
 /* L1 */{ KC_##K10, KC_##K11, KC_##K12, KC_##K13, KC_##K14, KC_##K15, KC_##K16 }, \
 /* L2 */{ KC_##K20, KC_##K21, KC_##K22, KC_##K23, KC_##K24, KC_##K25, KC_##K26 }, \
@@ -48,7 +46,7 @@ extern const uint16_t fn_actions[];
 /* L4 */{ KC_##K40, KC_##K41, KC_NO   , KC_##K43, KC_##K44, KC_##K45, KC_##K46 }, \
 /*                                                                             */ \
 /* Right hand                                                                  */ \
-/*        A(Red)    B(orange) C(Yellow) D(Green)  E(Blue)   F(Purple) G(Pink)  */ \ 
+/*        A(Red)    B(orange) C(Yellow) D(Green)  E(Blue)   F(Purple) G(Pink)  */ \
 /* R0 */{ KC_##K0D, KC_##K0C, KC_##K0B, KC_##K0A, KC_##K09, KC_##K08, KC_##K07 }, \
 /* R1 */{ KC_##K1D, KC_##K1C, KC_##K1B, KC_##K1A, KC_##K19, KC_##K18, KC_##K17 }, \
 /* R2 */{ KC_##K2D, KC_##K2C, KC_##K2B, KC_##K2A, KC_##K29, KC_##K28, KC_##K27 }, \
@@ -73,23 +71,23 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KEYMAP(
          ESC, 1,   2,   3,   4,   5, GRV,      EQL,  6,   7,   8,   9,   0,MINS, \
          TAB, Q,   W,   E,   R,   T, DEL,     BSPC,  Y,   U,   I,   O,   P,LBRC, \
-        LGUI, A,   S,   D,   F,   G,BSLS,     RBRC,  H,   J,   K,   L,SCLN,QUOT, \
-        LSFT, Z,   X,   C,   V,   B,LGUI,     NUBS,  N,   M,COMM, DOT,SLSH,RSFT, \
-         LCTL,FN2,  FN3, LALT,  SPC, ENT,      FN1,FN0, RALT,  INS,  APP, RCTL   ),
+         FN2, A,   S,   D,   F,   G,  NO,     RBRC,  H,   J,   K,   L,SCLN,QUOT, \
+        LSFT, Z,   X,   C,   V,   B,LGUI,     NUBS,  N,   M,COMM, DOT,SLSH,BSLS, \
+         LCTL,LGUI,  NO, LALT,  SPC, ENT,      FN1,FN0, RALT,  INS,  APP, RCTL   ),
     // Keymap 1: Main function layer
     KEYMAP(
         TRNS,         F1,  F2,  F3,  F4,      F5,  F6,    F7,  F8,  F9, F10, F11, F12,PSCR, \
-        TRNS,   KP_SLASH,KP_7,KP_8,KP_9,KP_MINUS,TRNS,  VOLU,MNXT,HOME,  UP, END,PGUP,SLCK, \
-        TRNS,KP_ASTERISK,KP_4,KP_5,KP_6, KP_PLUS,TRNS,  VOLD,MPLY,LEFT,DOWN,RGHT,PGDN, BRK, \
-        TRNS,       KP_0,KP_1,KP_2,KP_3,  KP_DOT,TRNS,  MUTE,MPRV,TRNS,TRNS,TRNS,TRNS,TRNS, \
+        TRNS,   KP_SLASH,KP_7,KP_8,KP_9,KP_MINUS,  NO,  VOLU,MNXT,HOME,  UP, END,PGUP,SLCK, \
+        TRNS,KP_ASTERISK,KP_4,KP_5,KP_6, KP_PLUS,  NO,  VOLD,MPLY,LEFT,DOWN,RGHT,PGDN, BRK, \
+        TRNS,       KP_0,KP_1,KP_2,KP_3,  KP_DOT,  NO,  MUTE,MPRV,  NO,  NO,  NO,  NO,TRNS, \
          TRNS,        TRNS, TRNS, TRNS,     TRNS, FN0,   FN1,TRNS, TRNS, TRNS, TRNS, TRNS   ),
     // Keymap 2: Mouse layer
     KEYMAP(
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,WH_L,BTN3,WH_R,TRNS,TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,BTN1,MS_U,BTN2,WH_U,TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,MS_L,MS_D,MS_R,WH_D,TRNS, \
-        TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
-         TRNS, TRNS, TRNS, TRNS, TRNS,TRNS,  TRNS,TRNS, TRNS, TRNS, TRNS, TRNS   ),
+        TRNS,TRNS,TRNS,TRNS, TRNS,TRNS,TRNS,  TRNS,TRNS,WH_L,BTN3,WH_R,TRNS,TRNS, \
+        TRNS,TRNS,TRNS,TRNS, TRNS,TRNS,TRNS,  TRNS,TRNS,BTN1,MS_U,BTN2,WH_U,TRNS, \
+        TRNS,TRNS, CUT,COPY,PASTE,TRNS,TRNS,  TRNS,TRNS,MS_L,MS_D,MS_R,WH_D,TRNS, \
+        TRNS,TRNS,TRNS,TRNS, TRNS,TRNS,TRNS,  TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
+          TRNS, TRNS, TRNS, TRNS, TRNS,TRNS,  TRNS,TRNS, TRNS, TRNS, TRNS, TRNS   ),
 };
 
 /*
