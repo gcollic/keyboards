@@ -70,7 +70,7 @@ const uint8_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     // Keymap 0: Default Layer
     KEYMAP(
          ESC, 1,   2,   3,   4,   5, GRV,      EQL,  6,   7,   8,   9,   0,MINS, \
-         TAB, Q,   W,   E,   R,   T, DEL,     BSPC,  Y,   U,   I,   O,   P,LBRC, \
+         TAB, Q,   W,   E,   R,   T,BSPC,     DEL,  Y,   U,   I,   O,   P,LBRC, \
          FN2, A,   S,   D,   F,   G,  NO,     RBRC,  H,   J,   K,   L,SCLN,QUOT, \
         LSFT, Z,   X,   C,   V,   B,LGUI,     NUBS,  N,   M,COMM, DOT,SLSH,BSLS, \
          LCTL,LGUI,  NO, LALT,  SPC, ENT,      FN1,FN0, RALT,  INS,  APP, RCTL   ),
