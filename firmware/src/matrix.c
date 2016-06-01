@@ -142,15 +142,19 @@ static void  init_cols(void)
 {
     // Input with pull-up(DDR:0, PORT:1)
 
+    // F1 et F5
     DDRF  &= ~(1<<1 | 1<<5);
     PORTF |=  (1<<1 | 1<<5);
 
+    // D3 et D6
     DDRD  &= ~(1<<3 | 1<<6);
     PORTD |=  (1<<3 | 1<<6);
 
+    // C7
     DDRC  &= ~(1<<7);
     PORTC |=  (1<<7);
 
+    // B3 et B4
     DDRB  &= ~(1<<3 | 1<<4);
     PORTB |=  (1<<3 | 1<<4);
 }
