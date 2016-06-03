@@ -136,7 +136,7 @@ uint8_t matrix_key_count(void)
 
 /* Column pin configuration
  * col: 0   1   2   3   4   5   6 
- * pin: F1  F5  B4  C7  B3  D3  D6
+ * pin: F1  B3  D3  C7  F5  B4  D6
  */
 static void  init_cols(void)
 {
