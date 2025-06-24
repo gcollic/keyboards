@@ -1,5 +1,9 @@
 # Orb55 keyboard
 
+A split keyboard with a trackball.
+
+![layout render](doc/layout-render.png)
+
 ## Project inspirations
 
 * [Oddbal keyboard](https://atulloh.github.io/oddball/) for the general flatish split keyboard with a 25mm trackball (trackball case inspiration, bill of material, …)
